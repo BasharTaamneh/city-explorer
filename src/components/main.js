@@ -20,7 +20,7 @@ class Main extends react.Component {
                         <Card.Body>
                             <Card.Title>{this.props.city}</Card.Title>
                             <Card.Text>
-                            Longitude: {this.props.lon}<br/>Latitude: {this.props.lat}
+                            Longitude= {this.props.lon}<br/>Latitude= {this.props.lat}
                             </Card.Text>
                             <Button onClick={this.props.hidelocdata} variant="primary">Close </Button>
                         </Card.Body>
