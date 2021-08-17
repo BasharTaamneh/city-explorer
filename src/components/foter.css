@@ -1,0 +1,11 @@
+
+
+.foter
+    {
+        padding: 3ch;
+        text-align: center;
+        background-color: rgb(51,51,51);
+        color: rgb(214,214,214);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        z-index: 5000;
+    }

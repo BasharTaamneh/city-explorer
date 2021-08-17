@@ -1,0 +1,10 @@
+.header{
+    padding: 2ch;
+    text-align: center;
+    background-color: rgb(51,51,51);
+    color: rgb(214,214,214);
+    position: sticky;
+    top: 0ch;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 5000;
+}

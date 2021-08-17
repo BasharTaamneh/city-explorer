@@ -1,0 +1,42 @@
+.body{
+    /* background-color: rgba(214, 214, 214, 0.308); */
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/423/753/73/world-map-time-zones-wallpaper-preview.jpg) ;
+    background-size: cover;
+}
+.form{
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 30ch;
+    padding: 2ch;
+position: relative;
+bottom: 65ch;
+left: 2ch;
+}
+
+.cardData{
+    /* border: 1px solid rgb(0, 255, 0); */
+height: 80ch;
+display: inline-block;
+width: 52.5ch;
+position: relative;
+top: 5ch;
+left: 60ch;
+}
+.card-img{
+    width: 51.7ch;
+}
+.card{
+    width: 50ch;
+}
+.card-body{
+    background-color: rgb(214,214,214);
+}
+.card-text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2ch;
+}
+.card-title{
+    font-weight: bolder;
+    font-size: 3ch;
+}
