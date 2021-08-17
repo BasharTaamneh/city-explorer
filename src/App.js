@@ -51,7 +51,7 @@ class App extends react.Component {
     console.log('mapData is= ', this.state.mapData);
 
 
-    let wetherURL = `http://localhost:3001/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
+    let wetherURL = `https://cityexplorer-api0.herokuapp.com/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
 
     let wetherinfo = await axios.get(wetherURL)
 
