@@ -20,7 +20,7 @@ display: inline-block;
 width: 52.5ch;
 position: relative;
 top: 5ch;
-left: 60ch;
+left: 55ch;
 }
 .card-img{
     width: 51.7ch;
@@ -39,4 +39,14 @@ left: 60ch;
 .card-title{
     font-weight: bolder;
     font-size: 3ch;
+}
+.cardWetherData{
+    display: inline-block;
+    /* border: 1px solid red; */
+    position: absolute;
+    right:85ch ;
+    top: 16.5ch;
+}
+.cardWetherData .card{
+margin-bottom: 12ch;
 }
