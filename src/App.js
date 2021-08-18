@@ -2,6 +2,7 @@ import react from 'react'
 import Form from './components/form'
 import Header from './components/Header'
 import Main from './components/main'
+import Weather from './components/Weather'
 import Foter from './components/Foter'
 import axios from 'axios';
 
@@ -13,7 +14,9 @@ class App extends react.Component {
 
       city: {},
       cityData: [],
-      mapData:[],
+      mapData: [],
+      WeatherData: [],
+      // WeatherDescription: [],
       showlocdata: false
 
     }
@@ -23,9 +26,9 @@ class App extends react.Component {
     e.preventDefault();
 
     await this.setState({
-       
-      city: e.target.city.value ,
-  
+
+      city: e.target.city.value,
+
     });
 
     console.log('city is= ', this.state.city);
@@ -34,7 +37,7 @@ class App extends react.Component {
 
     let data = await axios.get(locURL)
 
-    await  this.setState({
+    await this.setState({
       cityData: data.data[0]
     })
     console.log('citydata is= ', this.state.cityData);
@@ -46,19 +49,32 @@ class App extends react.Component {
       mapData: mapURL
     })
     console.log('mapData is= ', this.state.mapData);
-    
+
+
+    let wetherURL = `https://cityexplorer-api0.herokuapp.com/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
+
+    let wetherinfo = await axios.get(wetherURL)
+
+    await this.setState({
+      WeatherData: wetherinfo.data,
+      // WeatherDescription: wetherinfo.data.description
+    })
+    // console.log('wetherinfo is= ', this.state.WeatherDescription," ",this.state.WeatherDate," ",wetherinfo);
+    console.log('wetherinfo is= ', this.state.WeatherData);
+
+
     this.setState({
       showlocdata: true
     })
   }
 
-  hidelocdata=()=>{
+  hidelocdata = () => {
     this.setState({
       showlocdata: false
     })
   }
 
-  
+
   render() {
     return (
       <>
@@ -66,7 +82,8 @@ class App extends react.Component {
           <Header />
           <Form getlocation={this.getlocation} />
           <Main mapData={this.state.mapData} hidelocdata={this.hidelocdata} city={this.state.city} showlocdata={this.state.showlocdata} lat={this.state.cityData.lat} lon={this.state.cityData.lon} />
-          <Foter/>
+          <Weather WeatherData={this.state.WeatherData} city={this.state.city} showlocdata={this.state.showlocdata} />
+          <Foter />
         </div>
       </>
     )
