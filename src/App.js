@@ -3,6 +3,7 @@ import Form from './components/form'
 import Header from './components/Header'
 import Main from './components/main'
 import Weather from './components/Weather'
+import Movies from './components/movies'
 import Foter from './components/Foter'
 import axios from 'axios';
 
@@ -16,7 +17,7 @@ class App extends react.Component {
       cityData: [],
       mapData: [],
       WeatherData: [],
-      // WeatherDescription: [],
+      MoviesData:[],
       showlocdata: false
 
     }
@@ -51,17 +52,26 @@ class App extends react.Component {
     console.log('mapData is= ', this.state.mapData);
 
 
-    let wetherURL = `https://cityexplorer-api0.herokuapp.com/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
+    let wetherURL = `https://theredpartapi.herokuapp.com/weather?city=${this.state.city}`;
 
     let wetherinfo = await axios.get(wetherURL)
 
     await this.setState({
       WeatherData: wetherinfo.data,
-      // WeatherDescription: wetherinfo.data.description
     })
-    // console.log('wetherinfo is= ', this.state.WeatherDescription," ",this.state.WeatherDate," ",wetherinfo);
+
     console.log('wetherinfo is= ', this.state.WeatherData);
 
+
+    let MoviesURL = `https://theredpartapi.herokuapp.com/movies?query=${this.state.city}`;
+
+    let Moviesinfo = await axios.get(MoviesURL)
+
+    await this.setState({
+      MoviesData: Moviesinfo.data
+    })
+
+    console.log('Moviesinfo is= ', this.state.MoviesData);
 
     this.setState({
       showlocdata: true
@@ -83,8 +93,10 @@ class App extends react.Component {
           <Form getlocation={this.getlocation} />
           <Main mapData={this.state.mapData} hidelocdata={this.hidelocdata} city={this.state.city} showlocdata={this.state.showlocdata} lat={this.state.cityData.lat} lon={this.state.cityData.lon} />
           <Weather WeatherData={this.state.WeatherData} city={this.state.city} showlocdata={this.state.showlocdata} />
-          <Foter />
+          <Movies hidelocdata={this.hidelocdata}  MoviesData={this.state.MoviesData}showlocdata={this.state.showlocdata}/>
         </div>
+        <Foter />
+
       </>
     )
   }

@@ -1,35 +1,46 @@
-.body{
-    /* background-color: rgba(214, 214, 214, 0.308); */
-    background-image: url(https://c4.wallpaperflare.com/wallpaper/423/753/73/world-map-time-zones-wallpaper-preview.jpg) ;
+#root{
+    background-image: url(/src/imags/grayscale-vector-worldmap.jpg) ;
     background-size: cover;
 }
+
+.html{
+height: 100vh;
+scroll-behavior:smooth;
+}
+
 .form{
     /* border: 1px solid red; */
     display: inline-block;
     width: 30ch;
     padding: 2ch;
 position: relative;
-bottom: 65ch;
+bottom: 30ch;
 left: 2ch;
 }
 
 .cardData{
     /* border: 1px solid rgb(0, 255, 0); */
-height: 80ch;
+height: 70ch;
 display: inline-block;
 width: 52.5ch;
 position: relative;
-top: 5ch;
-left: 55ch;
+top: 15ch;
+left: 68ch;
 }
 .card-img{
     width: 51.7ch;
+    height: 40ch;
 }
 .card{
     width: 50ch;
 }
-.card-body{
+.cardData .card-body{
     background-color: rgb(214,214,214);
+    height: 22ch;
+
+}
+.cardData .btn {
+    position:relative;
 }
 .card-text{
     text-align: center;
@@ -43,10 +54,44 @@ left: 55ch;
 .cardWetherData{
     display: inline-block;
     /* border: 1px solid red; */
-    position: absolute;
-    right:85ch ;
-    top: 16.5ch;
+    position: relative;
+    left: 8ch;
+    bottom: 55ch;
+    width: 80CH;
 }
 .cardWetherData .card{
-margin-bottom: 12ch;
+    /* border: 1px solid rgb(47, 0, 255); */
+    display: inline-block;
+    margin-bottom: 2ch;
+    margin-left: 2CH;
+}
+.cardWetherData .card:nth-child(5){
+    margin-left: 21CH;
+}
+.cardMoviesData{
+    display: inline-block;
+    /* border: 1px solid rgb(255, 0, 200); */
+    position: relative;
+    left:3.5ch ;
+    /* top: 15ch; */
+    bottom: 35ch;
+    width: 150CH;
+    height: 200ch;
+}
+.cardMoviesData .card .card-img{
+    width: 25ch;
+    height: 30ch;
+    border-radius: 2ch;
+}
+
+.cardMoviesData .card{
+    /* border: 1px solid rgb(255, 238, 0); */
+    display: inline-flex;
+    text-align: center;
+margin-bottom: 3ch;
+margin-left: 6CH;
+}
+.cardMoviesData .card-body{
+    height: 45ch;
+    border-radius: 1ch;
 }

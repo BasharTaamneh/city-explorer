@@ -8,4 +8,5 @@
         color: rgb(214,214,214);
         font-family:Georgia, 'Times New Roman', Times, serif;
         z-index: 5000;
+    display:inline-flexbox;
     }

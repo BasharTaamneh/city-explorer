@@ -16,8 +16,8 @@ class Weather extends react.Component {
                         &&
                         this.props.WeatherData.map((item, idx) => {
                             return (
-                                <Card key={idx} style={{ width: '28rem' }}>
-                                    <Card.Body className={`card${idx}`}>
+                                <Card key={idx} style={{ width: '20rem' }}>
+                                    <Card.Body className={`cardwether${idx}`}>
                                         <Card.Text>Date: {item.date}</Card.Text>
                                         <hr/>
                                         <Card.Text> Wether Description: {item.description}</Card.Text>
