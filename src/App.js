@@ -52,7 +52,7 @@ class App extends react.Component {
     console.log('mapData is= ', this.state.mapData);
 
 
-    let wetherURL = `https://theredpartapi.herokuapp.com/weather?city=${this.state.city}`;
+    let wetherURL = `https://cityexplorer-api0.herokuapp.com/weather?city=${this.state.city}`;
 
     let wetherinfo = await axios.get(wetherURL)
 
@@ -63,7 +63,7 @@ class App extends react.Component {
     console.log('wetherinfo is= ', this.state.WeatherData);
 
 
-    let MoviesURL = `https://theredpartapi.herokuapp.com/movies?query=${this.state.city}`;
+    let MoviesURL = `https://cityexplorer-api0.herokuapp.com/movies?query=${this.state.city}`;
 
     let Moviesinfo = await axios.get(MoviesURL)
 
